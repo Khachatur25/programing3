@@ -5,9 +5,9 @@ var io = require('socket.io')(server);
 var fs = require("fs")
 
 app.use(express.static("."));
-
+ 
 app.get('/',function(req,res){
-    res.redirect('index.html');
+    res.redirect('y.html');
 });
 
 server.listen(3000,function(){
@@ -103,8 +103,41 @@ io.sockets.emit('send matrix',matrix)
 
 
         }
+        io.sockets.emit('send matrix',matrix)
     }
 
-io.sockets.emit('send matrix',matrix)
+
+
     
  }
+
+ function game(){
+        for (let i in grassArr) {
+                grassArr[i].mul()
+        }
+        
+        
+        for (let i in grassEaterArr) {
+                grassEaterArr[i].eat()
+        }
+        
+        
+        
+        for (let i in predatorArr) {
+                predatorArr[i].eat()
+        }
+        
+        for (let i in predatorEaterArr) {
+                predatorEaterArr[i].eat()
+        }
+
+        io.sockets.emit('send matrix',matrix)
+ }
+
+
+setInterval(game,300)
+
+
+ io.on('connection',function(){
+         createObject()
+ })
