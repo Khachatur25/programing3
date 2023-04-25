@@ -59,7 +59,7 @@ function matrixGenerator(matrixSize, grass, grassEater, predator, predatorEater,
 
     return matrix
 }
-matrix = matrixGenerator(25, 5, 4, 5, 4, 1)
+matrix = matrixGenerator(25, 5, 4, 5, 4, 0)
 
 io.sockets.emit('send matrix',matrix)
 
@@ -135,7 +135,7 @@ io.sockets.emit('send matrix',matrix)
  }
 
 
-setInterval(game,300)
+setInterval(game,100)
 
 
  io.on('connection',function(){

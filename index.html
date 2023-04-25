@@ -22,16 +22,44 @@
             color: white;
             text-align: center;
         }
-        h2{
-            text-shadow: black 2px 2px;
-            font-style: italic;
-            color: white;
-            text-align: center;
-        }
+
+.button1 {
+    background-color: #4CAF50;
+    width: max-content;
+    height: 50px;
+    margin-left: 20%;
+    cursor: pointer;
+} 
+.button2 {
+    background-color: #eb0b0b;
+    width: max-content;
+    height: 50px;
+    margin-left: 3%;
+    cursor: pointer;
+} 
+.button3 {
+    background-color: #0b95eb;
+    width: max-content;
+    height: 50px;
+    margin-left: 3%;
+    cursor: pointer;
+} 
+.button4 {
+    background-color: #3e3939;
+    width: max-content;
+    height: 50px;
+    margin-left: 3%;
+    cursor: pointer;
+} 
     </style>
 </head>
 <body>
    <h1>GAME OF LIFE</h1>
+   <button class="button1" type="button">AddGrass</button>
+   <button class="button2" type="button">AddGrassEater</button>
+   <button class="button3" type="button">AddPredator</button>
+   <button class="button4" type="button">AddPredatorEater</button>
+
 
    <script src="/socket.io/socket.io.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/p5@1.5.0/lib/p5.js"></script>
