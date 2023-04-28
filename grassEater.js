@@ -53,7 +53,7 @@ module.exports =  class GrassEater extends LivingCreature{
         let newCell = emptyCell[Math.floor(Math.random() * emptyCell.length)]
 
            if(newCell ){
-               this.energy += 5
+               this.energy += 2
             let newX = newCell[0]
             let newY = newCell[1]
 

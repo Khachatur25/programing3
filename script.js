@@ -4,54 +4,10 @@ var side = 30
 
 function setup() {
 
-        createCanvas(25* side, 25 * side)
-        
-
-
-        // canvas.addEventListener("click", horziontal)
-        // canvas.addEventListener("click", vertical)
-
-
-        // function horziontal() {
-        //         for (let y = 0; y < matrix.length; y++) {
-
-        //                 for (let x = 0; x < matrix.length; x++) {
-
-
-
-        //                         if (HoleArr.length == 0) {
-        //                                 matrix[x][i / 2] = 5
-        //                         }
-        //                                 matrix[x][i / 2] = 5
-        //                                 let hl = new Hole(x, y)
-        //                                 HoleArr.push(hl)
-                              
-        //                 }
-
-        //         }
-        // }
-
-        // function vertical() {
-        //         for (let y = 0; y < matrix.length; y++) {
-
-        //                 for (let x = 0; x < matrix.length; x++) {
-
-
-
-        //                         if (HoleArr.length == 0) {
-        //                                 matrix[x][i / 2] = 5
-        //                         } 
-                        
-        //                                 matrix[i / 2][x] = 5
-        //                                 let hl = new Hole(x, y)
-        //                                 HoleArr.push(hl)
-                                
-        //                 }
-        //         }
-
-        // }
+        createCanvas(30* side,30 * side)
 
 }
+
 
 
 function nkarox(matrix) {
@@ -89,3 +45,27 @@ function nkarox(matrix) {
         }
 } 
 socket.on('send matrix',nkarox)
+
+ function horziontal(){
+        socket.emit("horizontal")
+}
+
+function vertical(){
+        socket.emit("vertical")
+}
+
+function AddGrass(){
+        socket.emit("AddGrass")
+}
+function Clear(){
+        socket.emit("Clear")
+}
+function AddGrassEater(){
+        socket.emit("AddGrassEater")
+}
+function AddPredator(){
+        socket.emit("AddPredator")
+}
+function AddPredatorEater(){
+        socket.emit("AddPredatorEater")
+}

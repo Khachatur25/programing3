@@ -71,7 +71,7 @@ module.exports =  class Predator extends LivingCreature {
         let newCell = emptyCell[Math.floor(Math.random() * emptyCell.length)]
 
         if (newCell) {
-            this.energy += 7
+            this.energy += 4
             let newX = newCell[0]
             let newY = newCell[1]
 
@@ -95,7 +95,7 @@ module.exports =  class Predator extends LivingCreature {
             this.x = newX
             this.y = newY
 
-            if (this.energy > 30) {
+            if (this.energy > 40) {
                 this.mul()
             }
 
@@ -119,7 +119,7 @@ module.exports =  class Predator extends LivingCreature {
                 this.x = newX
                 this.y = newY
 
-                this.energy--
+                this.energy-= 2
 
                 if(this.energy < 0){
                     this.die ()
