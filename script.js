@@ -4,21 +4,40 @@ var side = 30
 
 function setup() {
 
-        createCanvas(30* side,30 * side)
+        createCanvas(30 * side, 30 * side)
 
 }
+socket.on('Winter', function (data) {
+        weath = data;
+})
+socket.on('Summer', function (data) {
+        weath = data;
+})
+socket.on('Spring', function (data) {
+        weath = data;
+})
+socket.on('Autumn', function (data) {
+        weath = data;
+})
 
-
-
+var weath = "winter"
 function nkarox(matrix) {
         for (let y = 0; y < matrix.length; y++) {
                 for (let x = 0; x < matrix[y].length; x++) {
                         var toBot = side - side * 0.1
                         textSize(toBot)
                         if (matrix[y][x] == 1) {
-                                fill("green")
+                                if (weath == "spring") {
+                                        fill("green")
+                                } else if (weath == "summer") {
+                                        fill("orange")
+                                } else if (weath == "autumn") {
+                                        fill("yellow")
+                                } else if (weath == "winter") {
+                                        fill("white")
+                                }
                                 rect(x * side, y * side, side, side)
-                                text('🥦', x * side, y * side + toBot);
+                                // text('🥦', x * side, y * side + toBot);
                         } else if (matrix[y][x] == 2) {
                                 fill("yellow")
                                 rect(x * side, y * side, side, side)
@@ -43,29 +62,41 @@ function nkarox(matrix) {
 
                 }
         }
-} 
-socket.on('send matrix',nkarox)
+}
+socket.on('send matrix', nkarox)
 
- function horziontal(){
+function horziontal() {
         socket.emit("horizontal")
 }
 
-function vertical(){
+function vertical() {
         socket.emit("vertical")
 }
 
-function AddGrass(){
+function AddGrass() {
         socket.emit("AddGrass")
 }
-function Clear(){
+function Clear() {
         socket.emit("Clear")
 }
-function AddGrassEater(){
+function AddGrassEater() {
         socket.emit("AddGrassEater")
 }
-function AddPredator(){
+function AddPredator() {
         socket.emit("AddPredator")
 }
-function AddPredatorEater(){
+function AddPredatorEater() {
         socket.emit("AddPredatorEater")
+}
+function Winter() {
+        socket.emit("winter");
+}
+function Summer() {
+        socket.emit("summer");
+}
+function Spring() {
+        socket.emit("spring");
+}
+function Autumn() {
+        socket.emit("autumn");
 }

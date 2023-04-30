@@ -139,6 +139,27 @@ io.sockets.emit('send matrix',matrix)
 
 setInterval(game,100)
 
+var weath;
+
+function Winter() {
+    weath = "winter";
+    io.sockets.emit('Winter', weath);
+}
+
+function Summer() {
+    weath = "summer";
+    io.sockets.emit('Summer', weath);
+}
+
+function Spring() {
+    weath = "spring";
+    io.sockets.emit('Spring', weath);
+}
+function Autumn() {
+    weath = "autumn";
+    io.sockets.emit('Autumn', weath);
+
+}
 
 function horziontal() {
         for (let y = 0; y < 30; y++) {
@@ -178,17 +199,7 @@ function vertical() {
         }
 
 }
- io.on('connection',function(socket){
-         createObject()
-         socket.on("horizontal", horziontal)
-         socket.on("vertical", vertical)
-         socket.on("AddGrass",AddGrass)
-         socket.on("Clear",Clear)
-         socket.on("AddGrassEater",AddGrassEater)
-         socket.on("AddPredator",AddPredator)
-         socket.on("AddPredatorEater",AddPredatorEater)
 
- })
 
  function AddGrass() {
          var a = 5;
@@ -253,6 +264,23 @@ function AddPredatorEater(){
         }
     }
     
+
+    io.on('connection',function(socket){
+        createObject()
+        socket.on("horizontal", horziontal)
+        socket.on("vertical", vertical)
+        socket.on("AddGrass",AddGrass)
+        socket.on("Clear",Clear)
+        socket.on("AddGrassEater",AddGrassEater)
+        socket.on("AddPredator",AddPredator)
+        socket.on("AddPredatorEater",AddPredatorEater)
+        socket.on("spring", Spring);
+        socket.on("summer", Summer);
+        socket.on("autumn", Autumn);
+        socket.on("winter", Winter);
+
+
+})
 
  var statistics = {}
 

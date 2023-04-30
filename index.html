@@ -27,54 +27,82 @@
     background-color: #4CAF50;
     width: max-content;
     height: 50px;
-    margin-left: 20%;
+    margin-left: 10%;
     cursor: pointer;
 } 
 .button2 {
     background-color: #eb0b0b;
     width: max-content;
     height: 50px;
-    margin-left: 3%;
+    margin-left: 2%;
     cursor: pointer;
 } 
 .button3 {
     background-color: #0b95eb;
     width: max-content;
     height: 50px;
-    margin-left: 3%;
+    margin-left: 2%;
     cursor: pointer;
 } 
 .button4 {
     background-color: #3e3939;
     width: max-content;
     height: 50px;
-    margin-left: 3%;
+    margin-left: 2%;
     cursor: pointer;
 } 
 .button5 {
     background-color: #c40aed;
     width: max-content;
     height: 50px;
-    margin-left: 3%;
+    margin-left: 2%;
     cursor: pointer;
 }
 .button6 {
     background-color: #6d9e7b;
     width: max-content;
     height: 50px;
-    margin-left: 3%;
+    margin-left: 2%;
     cursor: pointer;
 }
 .button7 {
     background-color: #d25454;
     width: max-content;
     height: 50px;
-    margin-left: 3%;
+    margin-left: 2%;
+    cursor: pointer;
+}
+.button8 {
+    background-color: #828181;
+    width: max-content;
+    height: 50px;
+    margin-left: 2%;
+    cursor: pointer;
+}
+.button9 {
+    background-color: #012309;
+    width: max-content;
+    height: 50px;
+    margin-left: 2%;
+    cursor: pointer;
+}
+.button10 {
+    background-color: #7b2f5b;
+    width: max-content;
+    height: 50px;
+    margin-left: 2%;
+    cursor: pointer;
+}
+.button11 {
+    background-color: #0a0a0a00;
+    width: max-content;
+    height: 50px;
+    margin-left: 2%;
     cursor: pointer;
 }
     </style>
 </head>
-<body>
+
    <h1>GAME OF LIFE</h1>
    <button onclick = "AddGrass()" class="button1" type="button">AddGrass</button>
    <button onclick = "AddGrassEater()" class="button2" type="button">AddGrassEater</button>
@@ -83,6 +111,10 @@
   <button onclick="horziontal()" class = "button5">Horizontal</button>
   <button onclick = "vertical()" class = "button6">vertical</button>
   <button onclick = "Clear()" class = "button7">Clear</button>
+ <button onclick = "Spring()" class = "button8">SPRING</button>
+ <button onclick = "Summer()" class = "button9">SUMMER</button>
+ <button onclick = "Autumn()" class = "button10">AUTUMN</button>
+ <button onclick = "Winter()" class = "button11">WINTER</button>
 
    <script src="/socket.io/socket.io.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/p5@1.5.0/lib/p5.js"></script>
